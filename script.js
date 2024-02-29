@@ -1,28 +1,32 @@
 
-
-document.querySelector("body").appendChild(h2);
-
-function displayWelcomeMessage(name) {
-    alert("Welcome to " + name + "'s Personal Website!");
+function changeLinkColor(event) {
+    event.preventDefault();
+  
+    
+    event.target.style.color = "red";
   }
   
-  // Function to toggle a class on click
-  function toggleClass(elementId, className) {
-    var element = document.getElementById(elementId);
-    if (element.classList.contains(className)) {
-      element.classList.remove(className);
-    } else {
-      element.classList.add(className);
-    }
+  
+  const links = document.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", changeLinkColor);
+  });
+  
+  
+  function displayDateTime() {
+    const now = new Date();
+    const dateTimeString = now.toLocaleString();
+    console.log("Current date and time:", dateTimeString);
   }
   
-  // Event listener to trigger the welcome message when the page loads
-  window.addEventListener('load', function() {
-    var userName = "Liam Simmons"; // Replace with your name
-    displayWelcomeMessage(userName);
-  });
   
-  // Event listener to toggle a class on click
-  document.getElementById('toggleButton').addEventListener('click', function() {
-    toggleClass('toggleElement', 'active');
-  });
+  function greetUser(name) {
+    console.log("Hello, " + name + "! Welcome to my website.");
+  }
+  
+  
+  window.onload = function() {
+    displayWelcomeMessage();
+    displayDateTime();
+    greetUser("Liam");
+  };
