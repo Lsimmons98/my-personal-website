@@ -20,13 +20,17 @@ function changeLinkColor(event) {
   }
   
   
-  function greetUser(name) {
-    console.log("Hello, " + name + "! Welcome to my website.");
-  }
-  
-  
   window.onload = function() {
     displayWelcomeMessage();
     displayDateTime();
-    greetUser("Liam");
   };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const greetingButton = document.createElement('button');
+    greetingButton.textContent = 'Greet Me!';
+    document.body.appendChild(greetingButton);
+  
+    greetingButton.addEventListener('click', function() {
+      alert('Hello, friend!');
+    });
+  });
