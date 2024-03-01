@@ -52,7 +52,6 @@ const fishMap = {
     "Yellow Neutral Small tank": "Zebra Danio"
 };
 
-// Function to create and display the quiz
 function displayQuiz() {
     const quizSection = document.getElementById("quiz");
 
@@ -87,7 +86,6 @@ function displayQuiz() {
     quizSection.appendChild(submitButton);
 }
 
-// Function to submit the quiz and display results
 function submitQuiz() {
     const quizSection = document.getElementById("quiz");
     const resultSection = document.createElement("div");
@@ -110,5 +108,4 @@ function submitQuiz() {
     quizSection.parentNode.removeChild(quizSection);
 }
 
-// Call the function to display the quiz when the page loads
 document.addEventListener("DOMContentLoaded", displayQuiz);
